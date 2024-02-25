@@ -1,7 +1,7 @@
 sudo: required
 services:
   - docker
-before_test:
+before_install:
   - docker build -f Dockerfile.dev -t terrankartiktellus/fe_travis_ci:3.0 .
 script:
   - docker run terrankartiktellus/fe_travis_ci:3.0 npm run test -- --coverage
